@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vfa-6A-iv8">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Layout Anchors-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rsf-CB-HND">
+                                <rect key="frame" x="20" y="273" width="374" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-Mb-lhf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <state key="normal" title="Example 1"/>
+                                        <connections>
+                                            <segue destination="Agb-Hv-zOf" kind="show" id="aHX-EB-9Aw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBP-iD-CGd">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="30"/>
+                                        <state key="normal" title="Example 2"/>
+                                        <connections>
+                                            <segue destination="hST-hy-W7k" kind="show" id="33i-z9-ULe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoK-ww-IMr">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="30"/>
+                                        <state key="normal" title="Example 3"/>
+                                        <connections>
+                                            <segue destination="9Oi-u1-Do8" kind="show" id="BIc-m1-Qab"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRq-b3-TNt">
+                                        <rect key="frame" x="0.0" y="120" width="374" height="30"/>
+                                        <state key="normal" title="Chess Board via Layout Anchors"/>
+                                        <connections>
+                                            <segue destination="eVB-pf-uym" kind="show" id="nzH-fn-H6h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctk-0Z-jBm">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="30"/>
+                                        <state key="normal" title="Chess Board via VFL"/>
+                                        <connections>
+                                            <segue destination="Djq-u3-lQd" kind="show" id="XJV-2l-exl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rsf-CB-HND" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BCS-nI-DWL"/>
+                            <constraint firstItem="Rsf-CB-HND" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="KI2-N4-dk4"/>
+                            <constraint firstItem="Rsf-CB-HND" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dff-Um-ArH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Layout Anchors" id="hCW-Uo-hlb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607.24637681159425" y="152.44565217391306"/>
+        </scene>
+        <!--Example1VC-->
+        <scene sceneID="PPn-aX-wUm">
+            <objects>
+                <viewController id="Agb-Hv-zOf" customClass="Example1VC" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KMi-LW-x2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="meu-3q-Aed"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vbo-kv-72k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4os-8W-iUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="-10"/>
+        </scene>
+        <!--Example2VC-->
+        <scene sceneID="88k-WO-KD2">
+            <objects>
+                <viewController id="hST-hy-W7k" customClass="Example2VC" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ELp-01-y7R"/>
+                        <viewControllerLayoutGuide type="bottom" id="g69-V7-4Wy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xb2-6H-TZD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCO-Dn-6ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="640"/>
+        </scene>
+        <!--Chess BoardVFLVC-->
+        <scene sceneID="jOm-bs-jD2">
+            <objects>
+                <viewController id="Djq-u3-lQd" customClass="ChessBoardVFLVC" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HLr-8N-WVk"/>
+                        <viewControllerLayoutGuide type="bottom" id="M76-ge-Hej"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eMM-Ss-oTe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVu-nr-Knf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="1132"/>
+        </scene>
+        <!--Chess Board AnchorVC-->
+        <scene sceneID="5HG-n1-oOE">
+            <objects>
+                <viewController id="eVB-pf-uym" customClass="ChessBoardAnchorVC" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W6N-Qh-6XB"/>
+                        <viewControllerLayoutGuide type="bottom" id="FK3-qr-uqA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eYD-a7-tg1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rO4-0d-P4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="1308"/>
+        </scene>
+        <!--Example3VC-->
+        <scene sceneID="TUG-fg-Bgg">
+            <objects>
+                <viewController id="9Oi-u1-Do8" customClass="Example3VC" customModule="LayoutAnchors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YrH-nW-oOd"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAT-vM-dMi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dFu-ms-BYU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3j-2t-Zy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="1305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TML-I7-WYZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vfa-6A-iv8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wgR-Rg-7vc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zhM-CH-EZG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lIH-Ur-PsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="152.44565217391306"/>
+        </scene>
+    </scenes>
+</document>
