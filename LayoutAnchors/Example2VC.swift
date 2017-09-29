@@ -22,12 +22,12 @@ class Example2VC: UIViewController {
         let view = UIView()
         
         // 2.
-        // Set ttranslateAutoresizingMaskIntoConstraints property to false to
+        // Set translatesAutoresizingMaskIntoConstraints property to false to
         // explicitly applying constraints to the view
         view.translatesAutoresizingMaskIntoConstraints = false
         
         // 3.
-        // Set background color to red and add the view to the super view.
+        // Set background color and add the view to the super view.
         // Always add the view to the superview first before applying any constraints.
         view.backgroundColor = .red
         self.view.addSubview(view)

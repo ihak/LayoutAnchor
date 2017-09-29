@@ -54,33 +54,37 @@ class ChessBoardVFLVC: UIViewController {
     func getRow(of length: Int, for rowNo: Int) -> UIView {
         let containerView = UIView()
         
-        var previousView: UIView?
+        var previousTile: UIView?
         for i in 0...length {
-            let view = UIView()
-            view.backgroundColor = (i+rowNo) % 2 == 0 ? UIColor.black : UIColor.white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            containerView.addSubview(view)
+            // Instantiate a tile view and add it to container
+            let tile = UIView()
+            tile.translatesAutoresizingMaskIntoConstraints = false
+            containerView.addSubview(tile)
             
-            // Height and center constraints
-            view.addConstraint(NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1.0, constant: 0.0))
-            containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"V:|[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view]))
+            // Alternate the tile color
+            tile.backgroundColor = (i+rowNo) % 2 == 0 ? UIColor.black : UIColor.white
             
-            // Join leading with trailing and equal width constraints
-            if previousView != nil {
-                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:[previousView][view(==previousView)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view, "previousView": previousView!]))
+            // Set height, top and bottom constraints of a tile.
+            tile.addConstraint(NSLayoutConstraint(item: tile, attribute: .height, relatedBy: .equal, toItem: tile, attribute: .width, multiplier: 1.0, constant: 0.0))
+            containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"V:|[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": tile]))
+            
+            // Join the leading anchor of current tile with trailing anchor of previous tile.
+            // Also add equal width constraint between previous and current tile.
+            if previousTile != nil {
+                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:[previousView][view(==previousView)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": tile, "previousView": previousTile!]))
             }
             
-            // If first view add leading with container
+            // If first tile, add leading with container
             if i == 0 {
-                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[view]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view]))
+                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:|[view]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": tile]))
             }
-                // If last view add trailing with container
+            // If last tile, add trailing with container
             else if i == length {
-                view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": view]))
+                tile.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+                containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat:"H:[view]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["view": tile]))
             }
             
-            previousView = view
+            previousTile = tile
         }
         return containerView
     }

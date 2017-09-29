@@ -19,26 +19,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func example1ButtonTapped(sender: UIButton) {
-        //
-    }
-    
-    @IBAction func example2(sender: UIButton) {
-        //
-    }
-    
-    @IBAction func example3(sender: UIButton) {
-        //
-    }
-    
-    @IBAction func chessBoardLayoutAnchorButtonTapped(sender: UIButton) {
-        //
-    }
-    
-    @IBAction func chessBoardVFLButtonTapped(sender: UIButton) {
-        //
-    }
-
 }
 

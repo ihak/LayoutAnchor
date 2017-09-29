@@ -52,34 +52,38 @@ class ChessBoardAnchorVC: UIViewController {
     func getRow(of length: Int, for rowNo: Int) -> UIView {
         let containerView = UIView()
         
-        var previousView: UIView?
+        var previousTile: UIView?
         for i in 0...length {
-            let view = UIView()
-            view.backgroundColor = (i+rowNo) % 2 == 0 ? UIColor.black : UIColor.white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            containerView.addSubview(view)
+            // Instantiate a tile view and add it to container
+            let tile = UIView()
+            tile.translatesAutoresizingMaskIntoConstraints = false
+            containerView.addSubview(tile)
             
-            // Height and center constraints
-            view.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            view.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-            view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+            // Alternate the tile color
+            tile.backgroundColor = (i+rowNo) % 2 == 0 ? UIColor.black : UIColor.white
             
-            // Join leading with trailing and equal width constraints
-            if previousView != nil {
-                view.leadingAnchor.constraint(equalTo: previousView!.trailingAnchor).isActive = true
-                view.widthAnchor.constraint(equalTo: previousView!.widthAnchor).isActive = true
+            // Set height, top and bottom constraints of a tile.
+            tile.heightAnchor.constraint(equalTo: tile.widthAnchor).isActive = true
+            tile.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+            tile.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+            
+            // Join the leading anchor of current tile with trailing anchor of previous tile.
+            // Also add equal width constraint between previous and current tile.
+            if previousTile != nil {
+                tile.leadingAnchor.constraint(equalTo: previousTile!.trailingAnchor).isActive = true
+                tile.widthAnchor.constraint(equalTo: previousTile!.widthAnchor).isActive = true
             }
             
-            // If first view add leading with container
+            // If first tile, add leading with container
             if i == 0 {
-                view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+                tile.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
             }
-                // If last view add trailing with container
+            // If last tile, add trailing with container
             else if i == length {
-                view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+                tile.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
             }
             
-            previousView = view
+            previousTile = tile
         }
         return containerView
     }

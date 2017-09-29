@@ -23,7 +23,7 @@ class Example1VC: UIViewController {
         
         
         // 2.
-        // Set translateAutoresizingMaskIntoConstraints property to false to
+        // Set translatesAutoresizingMaskIntoConstraints property to false to
         // explicitly applying constraints to the view
         view.translatesAutoresizingMaskIntoConstraints = false
         
